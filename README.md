@@ -57,9 +57,3 @@ The age and gender detection model used in this app is trained using TensorFlow 
 ## Support
 
 If you encounter any issues or have any questions, please feel free to [open an issue](https://github.com/SAIKIRANPATNANA/GenderAgeDetectorCVProjectByNullClass/issues).
-
-```
-
-
-
-

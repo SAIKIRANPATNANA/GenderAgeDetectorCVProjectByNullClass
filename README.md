@@ -47,8 +47,8 @@ python app.py
 
 You can view the output samples of the app below:
 
-- [Sample 1](https://github.com/your-username/age-gender-detection-app/raw/main/output/sample1.png): Predicted Age: 32, Predicted Gender: Male
-- [Sample 2](https://github.com/your-username/age-gender-detection-app/raw/main/output/sample2.png): Predicted Age: 25, Predicted Gender: Female
+- [Sample Output Using GUI](https://github.com/SAIKIRANPATNANA/GenderAgeDetectorCVProjectByNullClass/blob/main/output_images/Screenshot%20from%202024-02-10%2016-03-55.png): Predicted Age: 32, Predicted Gender: Male
+- [Sample Output Using Streamlit](https://github.com/SAIKIRANPATNANA/GenderAgeDetectorCVProjectByNullClass/blob/main/output_images/Screenshot%20from%202024-02-10%2016-07-59.png): Predicted Age: 25, Predicted Gender: Male
 
 ## Model
 

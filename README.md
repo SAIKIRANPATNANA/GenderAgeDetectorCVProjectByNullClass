@@ -32,7 +32,7 @@ pip install -r requirements.txt
 1. After installing the required dependencies, run the Streamlit app using the following command:
 
 ```bash
-streamlit run app.py
+streamlit run streamlit_app.py
 or 
 python app.py
 ```

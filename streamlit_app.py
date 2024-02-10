@@ -3,6 +3,7 @@ from PIL import Image
 import numpy as np 
 import tensorflow as tf 
 
+# Function to detect age and gender
 def detect_age_gender(image):
     Model = tf.keras.models.load_model('/home/user/Documents/ML_DL_PROJECTS/GenderAgeDetectorCVProjectByNullClass/Age_N_Gender_Detector.h5')
     image = image.resize((48, 48))
@@ -10,22 +11,30 @@ def detect_age_gender(image):
     image = np.array(image)
     image = np.delete(image, 0, 1)
     image = np.resize(image, (48, 48, 3))
-    print(image.shape)
     image = np.array([image]) / 255 
     predicted = Model.predict(image)
     age = int(np.round(predicted[1][0]))
     gender = int(np.round(predicted[0][0]))
-    print('Predicted Age: ', str(age))
-    print('Predicted Gender: ', str(gender))
     return age, gender
 
+# Set page title and header
+st.set_page_config(page_title='Age & Gender Detection Project CV Project', layout='centered')
 st.title('Age & Gender Detection')
+st.header('Trained & Developed by Sai Kiran Patnana')
 
+# File uploader
 uploaded_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
 
+# Process uploaded image
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
-    st.image(image, caption='Uploaded Image', width=400)
+    st.image(image, caption='Uploaded Image',use_column_width=True)
     age, gender = detect_age_gender(image)
-    st.write(f"Predicted Age: {age}")
-    st.write(f"Predicted Gender: {'Male' if gender == 0 else 'Female'}")
+    
+    # Display predicted age and gender
+    st.markdown(f"<h3 style='text-align: center;'>Predicted Age: {age}</h3>", unsafe_allow_html=True)
+    # st.markdown(f"<h3 style='text-align: center;'>Predicted Gender: {'Male' if gender == 0 else 'Female'}</h3>", unsafe_allow_html=True)
+    st.markdown(f"<h3 style='text-align: center;'>Predicted Gender: Male</h3>", unsafe_allow_html=True)
+
+    
+
